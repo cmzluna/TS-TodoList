@@ -1,17 +1,20 @@
 import React from "react";
 
-const ToDoList: React.FC = () => {
-  const todos = [
-    { id: "t1", text: "text 1" },
-    { id: "t2", text: "text 2" },
-  ];
+interface TodoListProps {
+  items: { id: string; text: string }[];
+}
 
+const ToDoList: React.FC<TodoListProps> = (props: TodoListProps) => {
+  // TodoListProps is now a placeholder for the type we wish to pass into ToDoList
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li key={todo.id}>{todo.text}</li>
-      ))}
-    </ul>
+    <>
+      <h1>hi</h1>
+      <ul>
+        {props.items.map((todo) => (
+          <li key={todo.id}>{todo.text}</li>
+        ))}
+      </ul>
+    </>
   );
 };
 
