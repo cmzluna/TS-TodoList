@@ -15,7 +15,7 @@ const NewTodo: React.FC<NewTodoProps> = (props: NewTodoProps) => {
   };
 
   return (
-    <form onSubmit={todoSubmitHandler}>
+    <form onSubmit={todoSubmitHandler} className="form-control">
       <div>
         <label htmlFor="todo-text">Todo text</label>
         <input type="text" id="todo-text" ref={textInputRef} />
